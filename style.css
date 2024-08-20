@@ -256,8 +256,11 @@ span {
         font-size: 2rem;
     }
 
-    .presentacion, .aja, .tobias, span {
+    .presentacion, .tobias, span {
         font-size: 1rem;
+    }
+    .aja{
+        font-size: 3rem;
     }
 }
 
