@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,6 +14,8 @@
 html, body {
     height: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -22,7 +24,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     backdrop-filter: blur(4px);
-
+    position: relative;
+    padding-bottom: 100px;
+    flex: 1;
 }
 
 header {
@@ -55,9 +59,11 @@ header {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 10px 20px; 
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
 .navbar a::before {
@@ -80,6 +86,11 @@ header {
 
 .navbar a:hover::before {
     transform: scaleX(1);
+}
+
+.navbar a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(203, 120, 236, 0.5); /* Borde de foco visible */
 }
 
 #Nosotros, #Leyendas {
@@ -114,7 +125,7 @@ h1 {
     padding: 15px;
     color: #645e9d;
     text-align: left;
-    font-size: 58px;
+    font-size: 3rem;
     font-family: 'Blood Crow', sans-serif;
     animation: miedo 4s ease-in-out infinite;
 }
@@ -148,53 +159,53 @@ span {
     font-style: italic;
 }
 
-.footer{
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
+    height: 100px;
     background-color: transparent;
     position: relative;
+    bottom: 0;
     width: 100%;
-    background: transparent;
-    padding: 20px 50px;
+    padding: 190;
     flex-direction: column;
 }
 
-.social-icon{
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: relative;
-     margin: 10px 5px;
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
     flex-wrap: wrap;
 }
 
-.icon-elem{
+.icon-elem {
     list-style: none;
 }
 
-.icon{
+.icon {
     color: #7E6551;
     font-size: 32px;
     display: inline-block;
     margin: 0 10px;
 }   
 
-.menu{
+.menu {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
     position: relative;
     align-items: center;
     margin: 10px 0;
     flex-wrap: wrap;
 }
 
-.menu-element{
+.menu-element {
     list-style-type: none;
 }
 
-.menu-icon{
+.menu-icon {
     color: white;
     font-size: 20px;
     display: inline-block;
@@ -204,18 +215,17 @@ span {
     transition: 0.3s;
 }
 
-.menu-icon:hover{
+.menu-icon:hover {
     opacity: 1;
 }
 
-.copy{
+.copy {
     color: #7E6551;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
     font-size: 20px;
 }
-
 
 @keyframes miedo {
     0% {
@@ -259,9 +269,6 @@ span {
     .presentacion, .tobias, span {
         font-size: 1rem;
     }
-    .aja{
-        font-size: 3rem;
-    }
 }
 
 @media (max-width: 480px) {
@@ -274,7 +281,11 @@ span {
         font-size: 1.5rem;
     }
 
-    .presentacion, .aja, .tobias, span {
+    .presentacion, .tobias, span {
         font-size: 0.9rem;
+    }
+
+    .aja {
+        font-size: 2.5rem;
     }
 }
